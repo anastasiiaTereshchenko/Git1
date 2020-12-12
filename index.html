@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<title>Tereshchenko Anastasiia</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form class="ui form" method="post" onsubmit="addRow(this.form);return false;">
+    <div class="field">
+      <label>Name hotel:</label>
+      <input type="text" name="name-hotel" id="name-hotel" placeholder="Name hotel">
+    </div>
+
+    <div class="field">
+      <label>Class hotel:</label>
+      <input type="text" name="class-hotel" id="class-hotel" placeholder="Class hotel">
+    </div>
+
+    <div class="field">
+      <label>Enter image hotel:</label>
+      <input type="url" name="img-hotel" id="img-hotel" placeholder="Enter image hotel">
+    </div>
+
+    <div class="field">
+      <label>Number of seats in the rooms:</label>
+      <input type="number" name="number-seats" id="number-seats" placeholder="Number of seats in the rooms">
+    </div>
+
+    <div class="field">
+      <label>Price:</label>
+      <input type="number" name="price" id="price" placeholder="Price" required>
+    </div>
+    
+    <input type="button" value="Заказать" class="button" name="TESTBUTTON" onclick="addRow(this.form)" >
+  </form>
+
+  <table class="ui celled table" id="table">
+    <thead>
+      <tr>
+        <th>Name hotel</th><th>Class hotel</th><th>Enter image hotel</th><th>Number of seats in the rooms</th><th>Price</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script type="text/javascript">
+    function addRow (f)
+    {
+    var tb = document.getElementById('table').getElementsByTagName('tbody')[0];
+     
+    var ro = tb.insertRow (-1);
+     var ce = ro.insertCell (-1); ce.innerHTML = f ['name-hotel'].value;
+     var ce = ro.insertCell (-1); ce.innerHTML = f ['class-hotel'].value;
+      var ce = ro.insertCell (-1); ce.innerHTML = f ['img-hotel'].value;
+       var ce = ro.insertCell (-1); ce.innerHTML = f ['number-seats'].value;
+        var ce = ro.insertCell (-1); ce.innerHTML = f ['price'].value;
+    f.reset ();
+    }
+  </script>
+</body>
+</html>
